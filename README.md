@@ -1,6 +1,9 @@
 # mortgageCalculator
 
 When you click on a link, you are taken to a page.
+
+https://kuchmen.github.io/mortgageCalculator/
+
 ![image](https://user-images.githubusercontent.com/93252741/165160468-0edca85d-96c0-4c34-aa77-e2b5e5d7f89a.png)
 
 There are two tabs.
