@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    </head>
+  <html>
+    <body>
+      <h1>Mortgage calculator</h1>
+      <div class="tabs">
+        <input id="tab1" type="radio" name="tabs" checked />
+        <label for="tab1" title="Tab 1">Banks management page</label>
+        <input id="tab2" type="radio" name="tabs" />
+        <label for="tab2" title="Tab 2">Mortgage calculator page</label>
+        <section id="content-tab1">
+          <h2>You can create/edit/remove the bank</h2>
+          <div id="wrapper">
+            <div
+              align="center"
+              cellspacing="2"
+              cellpadding="5"
+              id="dataList"
+              border="1"
+            ></div>
+          </div>
+          <div id="now">
+             <h3>You can add bank</h3>
+            <form>
+             
+              <p>
+                <b> Bank Name:</b
+                ><input
+                  type="text"
+                  id="bankName"
+                  class="text-field__input1"
+                  required
+                />
+              </p>
+              <p>
+                <b> Interest Rate: % </b
+                ><input
+                  type="number"
+                  id="interestRate"
+                  min="1"
+                  max="100"
+                  class="text-field__input1"
+                  placeholder="from 1 to 100"
+                  required
+                />
+              </p>
+              <p>
+                <b> Maximum Loan:</b
+                ><input
+                  type="number"
+                  id="maximumLoan"
+                  class="text-field__input1"
+                  required
+                />
+              </p>
+              <p>
+                <b> Minimum down payment: %</b
+                ><input
+                  class="text-field__input1"
+                  type="number"
+                  id="minimum-down-payment"
+                  min="0"
+                  max="100"
+                  placeholder="from 0 to 100"
+                  required
+                />
+              </p>
+              <p>
+                <b> Loan term(month):</b
+                ><input
+                  type="text"
+                  id="loan-term"
+                  class="text-field__input1"
+                  required
+                />
+              </p>
+              <p id="problem"></p>
+              <input
+                type="button"
+                class="add button"
+                onclick="addCard();"
+                value="Add Row"
+              />
+            </form>
+          </div>
+        </section>
+        <section id="content-tab2">
+          <form action="">
+            <div class="text-field">
+              <div class="chooseOpsh">
+                <p>Please choose your bank:</p>
+                <select
+                  id="select-choose"
+                  name="select"
+                  class="text-field__input1"
+                  onchange="getSelectValue();"
+                >
+                  <option value="" selected="selected" hidden="hidden">
+                    Select value
+                  </option>
+                </select>
+              </div>
+              <p class="text-field__label">
+                <b>Initial Loan</b>:
+                <input
+                  type="number"
+                  id="initial-loan-cal"
+                  class="text-field__input1"
+                />
+              </p>
+              <p>Maximum Loan: <span id="max-loan"></span></p>
+              <p>
+                <b>Period(month)</b>:
+                <input type="number" id="period" class="text-field__input1" />
+              </p>
+              <p>Maximum Period(month): <span id="max-period"></span></p>
+              <p>
+              <p><b>Minimum down payment: </b> <span id="min-down"></span>%</p>
+              <p>
+                <b>Interest Rate: </b> <span id="rate"></span>%</p>
+              </p>
+              <p>
+                <hr />
+                <p>
+                <b> Minimum down payment: <span id="out-down"></span></b></p>
+              </p><b> Total Monthly Payment: <span id="out-monthly"></span></b>
+              </p>
+                <button
+                  type="button"
+                  id="do-This-Cal"
+                  class="button"
+                  onclick="doThisCal();"
+                >
+                  Calculate Payments
+                </button>
+              </p>
+            </div>
+          </form>
+        </section>
+      </div>
+      <script type="text/javascript" src="js/index.js"></script>
+    </body>
+  </html>
+</html>
