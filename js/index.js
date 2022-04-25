@@ -197,7 +197,11 @@ function doThisCal() {
         
     } else {
         const M = (P - D) * (r / 12) * Math.pow((1 + r / 12), n) / (Math.pow((1 + r / 12), n) - 1);
+	     if (M === NaN) {
+            	document.getElementById("out-monthly").innerHTML = 'Invalid data entered';
+        	} else {
         document.getElementById("out-monthly").innerHTML = Math.round(M);
         document.getElementById("out-down").innerHTML = D;
+	}
     } 
 }
